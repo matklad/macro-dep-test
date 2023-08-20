@@ -76,3 +76,10 @@ not be needed from Cargo.lock.
 
 With target-specific dependencies (`target.'cfg()'.dependencies` syntax), Cargo has to assume that
 each `cfg` _could_ be true, and so it has to conservatively include everything into a lockfile.
+
+## Important Clarification
+
+So, does this actually work? I don't know! I don't think anyone tried this hack at scale, so it
+might be the case that something breaks HORRIBLY somewhere. We won't know without trying though :-)
+And it seems to work in this little experimient (there's a bunch of `macro-dep-test` and
+`macro-dep-test-macros` versions published to crates.io, so you could check for yourself )
