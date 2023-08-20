@@ -1,0 +1,12 @@
+[package]
+name = "macro-dep-test"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/matklad/macro-dep-test"
+description = "testing version resolution for associated macros"
+license = "MIT OR Apache-2.0"
+
+[workspace]
+
+[target.'cfg(never)'.dependencies]
+macro-dep-test-macros = { version="=0.1.0", path="./macros" }
