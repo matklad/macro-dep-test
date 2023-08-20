@@ -1,6 +1,6 @@
 [package]
 name = "macro-dep-test"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 repository = "https://github.com/matklad/macro-dep-test"
 description = "testing version resolution for associated macros"
@@ -9,10 +9,10 @@ license = "MIT OR Apache-2.0"
 [workspace]
 
 [dependencies]
-macro-dep-test-macros = { version="=0.1.2", path="./macros", optional=true }
+macro-dep-test-macros = { version="=0.1.3", path="./macros", optional=true }
 
-[target.'cfg(never)'.dependencies]
-macro-dep-test-macros = { version="=0.1.2", path="./macros" }
+[target.'cfg(all(to_be, not(to_be)))'.dependencies]
+macro-dep-test-macros = { version="=0.1.3", path="./macros" }
 
 [features]
 derive = ["dep:macro-dep-test-macros"]
